@@ -16,44 +16,6 @@ You can put the things to be shown in GitHub pages into the _docs/_ folder. Both
 
 These projects will be automatically added into [https://projects.ce.pdn.ac.lk](). If you like to show more details about your project on this site, you can fill the parameters in the file, _/docs/index.json_
 
-```
-{
-  "title": "This is the title of the project",
-  "team": [
-    {
-      "name": "Kavindu Methpura",
-      "email": "e20254@eng.pdn.ac.lk",
-      "eNumber": "E/20/254"
-    },
-    {
-      "name": "Binuri Senavirathna",
-      "email": "e20367@eng.pdn.ac.lk",
-      "eNumber": "E/20/367"
-    },
-    {
-      "name": "Rashmika Sewmini",
-      "email": "e20370@eng.pdn.ac.lk",
-      "eNumber": "E/20/370"
-    },
-    {
-      "name": "Janith Wanasinghe",
-      "email": "e20420@eng.pdn.ac.lk",
-      "eNumber": "E/20/420"
-    }
-  ],
-  "supervisors": [
-    {
-      "name": "Dr. Isuru Nawinne",
-      "email": "isurunawinne@eng.pdn.ac.lk"
-    },
-    {
-      "name": "Supervisor 2",
-      "email": "email@eng.pdn.ac.lk"
-    }
-  ],
-  "tags": ["Web", "Embedded Systems"]
-}
-```
 
 Once you filled this _index.json_ file, please verify the syntax is correct. (You can use [this](https://jsonlint.com/) tool).
 
