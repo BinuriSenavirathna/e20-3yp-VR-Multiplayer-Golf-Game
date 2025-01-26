@@ -1,21 +1,27 @@
-
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Projects | Department of Computer Engineering, University of Peradeniya">
     <meta name="author" content="Department of Computer Engineering">
     <link rel="icon" href="/e20-3yp-VR-Multiplayer-Golf-Game/assets/images/favicon.ico">
 
-    
     <title>VR Multiplayer Golf Game</title>
-    
+
+    <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="/e20-3yp-SafePlus/assets/css/index.css" rel="stylesheet">
-
-    <!-- seo title=false -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-10YPVZG432"></script>
@@ -23,18 +29,15 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-10YPVZG432');
     </script>
-
-
 </head>
 <body>
     <div class="container">
         <header class="blog-header pt-3 pb-2 mb-0">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="d-none d-sm-block col-md-2 col-sm-3 pt-1">
-                    <img class=" mx-auto d-block img-fluid img-logo" src="/e20-3yp-SafePlus/assets/images/crest.png" alt="Logo">
+                    <img class="mx-auto d-block img-fluid img-logo" src="/e20-3yp-SafePlus/assets/images/crest.png" alt="Logo">
                 </div>
                 <div class="col-md-10 col-sm-9">
                     <a class="blog-header-logo text-dark" href="#">
@@ -48,104 +51,205 @@
 
     <main role="main" class="container pt-3" style="min-height: 90vh">
         <div class="container px-5">
-            
-<h1 id="project-title"></h1>
+            <h1 id="project-title">VR Multiplayer Golf Game</h1>
+            <hr />
+            <h2 id="team">Team</h2>
+            <ul>
+                <li>E/20/254 <a href="mailto:e20254@eng.pdn.ac.lk">e20254@eng.pdn.ac.lk</a></li>
+                <li>E/20/367 <a href="mailto:e20367@eng.pdn.ac.lk">e20367@eng.pdn.ac.lk</a></li>
+                <li>E/20/370 <a href="mailto:e20370@eng.pdn.ac.lk">e20370@eng.pdn.ac.lk</a></li>
+                <li>E/20/420 <a href="mailto:e20420@eng.pdn.ac.lk">e20420@eng.pdn.ac.lk</a></li>
+            </ul>
+            <h4 id="table-of-contents">Table of Contents</h4>
+            <ol>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#solution-architecture">Solution Architecture</a></li>
+                <li><a href="#hardware-and-software-designs">Hardware &amp; Software Designs</a></li>
+                <li><a href="#testing">Testing</a></li>
+                <li><a href="#detailed-budget">Detailed budget</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#links">Links</a></li>
+            </ol>
 
-<hr />
+            <h2 id="introduction">Introduction</h2>
+            <section id="about" class="about">
+                <div class="container">
+                    <!-- <div class="section-title">
+                        <h3>About</h3>
+                    </div> -->
+                    <div class="row content">
+                        <div class="col-lg-4">
+                            <h4 class="text-center pb-3">Real World Problem</h4>
+                            <p>In today’s globalized world, families and friends are often separated by physical distance.</p>
+                            <ul>
+                                <li>Lack of Shared Activities: Reduced opportunities for fun and interactive experiences.</li>
+                                <li>Emotional Disconnect: Weaker relationships and feelings of loneliness.</li>
+                                <li>Missed Memories: Missing out on special moments and bonding opportunities.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 pt-4 pt-lg-0">
+                            <h4 class="text-center pb-3">Proposed Solution</h4>
+                            <p>Creating a VR multiplayer golf game that brings families and friends closer.</p>
 
-<h2 id="team">Team</h2>
-<ul>
-  <li>E/20/254 <a href="e20254@eng.pdn.ac.lk">e20254@eng.pdn.ac.lk</a></li>
-  <li>E/20/367 <a href="e20367@eng.pdn.ac.lk">e20367@eng.pdn.ac.lk</a></li>
-  <li>E/20/370 <a href="e20370@eng.pdn.ac.lk">e20370@eng.pdn.ac.lk</a></li>
-  <li>E/20/420 <a href="e20420@eng.pdn.ac.lk">e20420@eng.pdn.ac.lk</a></li>
-</ul>
+                            <p>How it works</p>
+                            <ul>
+                                <li>Players use VR headsets and motion sensors on their hands and golf sticks to play a realistic game of golf.</li>
+                                <li>A multiplayer mode allows users to join virtual game rooms, interact via voice chat, and enjoy the game together.</li>
+                                <li>The game includes different difficulty levels, making it suitable for beginners and experienced players alike.</li>
+                            </ul>
 
-<!-- Image (photo/drawing of the final hardware) should be here -->
+                        </div>
+                        <div class="col-lg-4 pt-4 pt-lg-0">
+                            <h4 class="text-center pb-3">Potential Impact</h4>
+                            <p text="justify-content-between">positively impact society by bridging long-distance relationships, promoting physical and mental well-being, and making golf more accessible and affordable. It fosters social inclusion by allowing people of all ages and abilities to participate, while also addressing issues of sedentary lifestyles and social isolation. Economically, it provides a cost-effective alternative to traditional golf and creates new opportunities in the VR and e-sports industries. Technologically, it advances VR adoption and innovation in gamified fitness, contributing to a more connected and health-conscious society.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-<!-- This is a sample image, to show how to add images to your page. To learn more options, please refer [this](https://projects.ce.pdn.ac.lk/docs/faq/how-to-add-an-image/) -->
+            <section id="implementation">
+              <section id="solution-architecture">
+                <div class="container" data-aos="fade-up">
+                  <div class="section-title">
+                    <h2>Solution Architecture</h2>
+                  </div>
+                  <br>
+                  <div class="row content">
+                    <div class="col-md-6" data-aos="fade-right">
+                      <img src="./assets/img/highlevelarchitecture.jpg" class="img-fluid">
+                    </div> 
+                  </div>
 
-<!-- ![Sample Image](/e20-3yp-SafePlus/images/sample.png) -->
+                  <br><br>
+                  <div class="row content" data-aos="fade-up">
+                    <div class="section-title">
+                      <h3>Dataflow</h3>
+                    </div>
+                    <br><br>
+                    <div class="col-md-6" data-aos="fade-right">
+                      <img src="./assets/img/data_flow_diagram.jpg" class="img-fluid" alt="">
+                    </div>
+                  </div>
+        
+                  <!-- <div class="row content">
+                    <div class="col-md-6" data-aos="fade-right">
+                      <img src="./assets/img/controlflow.png" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 pt-5 fs-4">
+                      <h2>Control Flow</h2>
+                    </div> 
+                  </div> -->
+        
+        
+                  <!-- <div class="row content">
+                    <div class="col-md-6 pt-5">
+                      <h2>Cloud Architecture</h2>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left">
+                      <img src="./assets/img/newcloud.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+        
+                </div> -->
+              </section> 
 
-<h4 id="table-of-contents">Table of Contents</h4>
-<ol>
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#solution-architecture">Solution Architecture</a></li>
-  <li><a href="#hardware-and-software-designs">Hardware &amp; Software Designs</a></li>
-  <li><a href="#testing">Testing</a></li>
-  <li><a href="#detailed-budget">Detailed budget</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
-  <li><a href="#links">Links</a></li>
-</ol>
-
-<h2 id="introduction">Introduction</h2>
-
-<p>The VR gaming industry is growing rapidly, but the VR golf segment faces challenges:</p>
-          <ul>
-            <li>Social Isolation: Lack of multiplayer features and real-time interaction.</li>
-            <li>High Costs: Premium VR games are expensive and inaccessible in regions like Sri Lanka.</li>
-            <li>Limited Accessibility: Busy lifestyles prevent casual gamers from experiencing golf.</li>
-          </ul>
-
-<h2 id="solution-architecture">Solution Architecture</h2>
-
-<p>High level diagram + description</p>
-
-<h2 id="hardware-and-software-designs">Hardware and Software Designs</h2>
-
-<p>Detailed designs with many sub-sections</p>
-
-<h2 id="testing">Testing</h2>
-
-<p>Testing done on hardware and software, detailed + summarized results</p>
-
-<h2 id="detailed-budget">Detailed budget</h2>
-
-<p>All items and costs</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th style="text-align: center">Quantity</th>
-      <th style="text-align: center">Unit Cost</th>
-      <th style="text-align: right">Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Sample item</td>
-      <td style="text-align: center">5</td>
-      <td style="text-align: center">10 LKR</td>
-      <td style="text-align: right">50 LKR</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>What was achieved, future developments, commercialization plans</p>
-
-<h2 id="links">Links</h2>
-
-<ul>
-  <li><a href="https://github.com/cepdnaclk/eYY-3yp-project-template" target="_blank">Project Repository</a></li>
-  <li><a href="https://cepdnaclk.github.io/eYY-3yp-project-template" target="_blank">Project Page</a></li>
-  <li><a href="http://www.ce.pdn.ac.lk/">Department of Computer Engineering</a></li>
-  <li><a href="https://eng.pdn.ac.lk/">University of Peradeniya</a></li>
-</ul>
-
-
+              <section id="detailed-budget">
+                <div class="container" data-aos="fade-up">
+                  <div class="section-title">
+                    <h2>Budget</h2>
+                    <div>
+                      <table class="table table-striped table-hover">
+                        <thead>
+                          <tr class="">
+                            <th></th>
+                            <th>Component</th>
+                            <th>Quantity</th>
+                            <th style="text-align: right;">Price per item (LKR)</th>
+                            <th style="text-align: right;">Price (LKR)</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="table-body">
+                            <th scope="row">01</th>
+                            <td>MPU-6050</td>
+                            <td>3x2</td>
+                            <td style="text-align: right;">540.00</td>
+                            <td style="text-align: right;">3240.00</td>
+                            <td></td>
+                          </tr>
+                          <tr class="table-body">
+                            <th scope="row">02</th>
+                            <td>HC-05 Bluetooth RF Transceiver</td>
+                            <td>3x2</td>
+                            <td style="text-align: right;">990.00</td>
+                            <td style="text-align: right;">10140.00</td>
+                            <td></td>
+                          </tr>
+                          <tr class="table-body">
+                            <th scope="row">03</th>
+                            <td>Vibrator</td>
+                            <td>1x2</td>
+                            <td style="text-align: right;">120.00</td>
+                            <td style="text-align: right;">240.00</td>
+                            <td></td>
+                          </tr>
+                          <tr class="table-body">
+                            <th scope="row">04</th>
+                            <td>VR Box with headset & mic</td>
+                            <td>1x2</td>
+                            <td style="text-align: right;">7000.00</td>
+                            <td style="text-align: right;">14000.00</td>
+                            <td></td>
+                          </tr>
+                          <tr class="table-body">
+                            <th scope="row">05</th>
+                            <td>AWS</td>
+                            <td>1</td>
+                            <td style="text-align: right;">30.00 per hour</td>
+                            <td style="text-align: right;">21600.00 per month</td>
+                            <td></td>
+                          </tr>
+                          <tr class="table-body">
+                            <th scope="row">06</th>
+                            <td>Rechargeable battery</td>
+                            <td>9x2</td>
+                            <td style="text-align: right;">420.00</td>
+                            <td style="text-align: right;">7560.00</td>
+                            <td></td>
+                          </tr>
+                          <tr class="table-body">
+                            <th scope="row">07</th>
+                            <td>Button</td>
+                            <td>6x2</td>
+                            <td style="text-align: right;">50.00</td>
+                            <td style="text-align: right;">600.00</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <th style="text-align: right;">Total</th>
+                            <th style="text-align: right;">57380.00</th>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
         </div>
     </main>
-<footer class="blog-footer">
-    <p>
-        <a href="#">Back to top</a>
-    </p>
-</footer>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
+    <footer class="blog-footer">
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+</html>
