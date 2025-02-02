@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="/e20-3yp-SafePlus/assets/css/index.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 100px; /* Added more space to the top */
+        }
+    </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-10YPVZG432"></script>
@@ -48,6 +53,8 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
                     <li class="nav-item"><a class="nav-link" href="#solution-architecture">Solution Architecture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hardware-and-software-designs">Hardware & Software Designs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testing">Testing</a></li>
                     <li class="nav-item"><a class="nav-link" href="#detailed-budget">Budget</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
@@ -69,34 +76,33 @@
         <div class="container px-5">
             <h1 id="project-title">VR Multiplayer Golf Game</h1>
             <hr />
-           <!-- Team Section -->
-<h2 id="team">Team</h2>
-<div class="row">
-    <div class="col-md-3 text-center">
-        <img src="assets/images/team/e20254.jpg" class="img-fluid rounded-circle" alt="E/20/254">
-        <p>E/20/254 <br> <a href="mailto:e20254@eng.pdn.ac.lk">e20254@eng.pdn.ac.lk</a></p>
-    </div>
-    <div class="col-md-3 text-center">
-        <img src="assets/images/team/e20367.jpg" class="img-fluid rounded-circle" alt="E/20/367">
-        <p>E/20/367 <br> <a href="mailto:e20367@eng.pdn.ac.lk">e20367@eng.pdn.ac.lk</a></p>
-    </div>
-    <div class="col-md-3 text-center">
-        <img src="assets/images/team/e20370.jpg" class="img-fluid rounded-circle" alt="E/20/370">
-        <p>E/20/370 <br> <a href="mailto:e20370@eng.pdn.ac.lk">e20370@eng.pdn.ac.lk</a></p>
-    </div>
-    <div class="col-md-3 text-center">
-        <img src="assets/images/team/e20420.jpg" class="img-fluid rounded-circle" alt="E/20/420">
-        <p>E/20/420 <br> <a href="mailto:e20420@eng.pdn.ac.lk">e20420@eng.pdn.ac.lk</a></p>
-    </div>
-</div>
+            <!-- Team Section -->
+            <h2 id="team">Team</h2>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <img src="assets/images/team/e20254.jpg" class="img-fluid rounded-circle" alt="E/20/254">
+                    <p>E/20/254 <br> <a href="mailto:e20254@eng.pdn.ac.lk">e20254@eng.pdn.ac.lk</a></p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="assets/images/team/e20367.jpg" class="img-fluid rounded-circle" alt="E/20/367">
+                    <p>E/20/367 <br> <a href="mailto:e20367@eng.pdn.ac.lk">e20367@eng.pdn.ac.lk</a></p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="assets/images/team/e20370.jpg" class="img-fluid rounded-circle" alt="E/20/370">
+                    <p>E/20/370 <br> <a href="mailto:e20370@eng.pdn.ac.lk">e20370@eng.pdn.ac.lk</a></p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="assets/images/team/e20420.jpg" class="img-fluid rounded-circle" alt="E/20/420">
+                    <p>E/20/420 <br> <a href="mailto:e20420@eng.pdn.ac.lk">e20420@eng.pdn.ac.lk</a></p>
+                </div>
+            </div>
             <h4 id="table-of-contents">Table of Contents</h4>
             <ol>
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#solution-architecture">Solution Architecture</a></li>
-                <li><a href="#hardware-and-software-designs">Hardware &amp; Software Designs</a></li>
+                <li><a href="#hardware-and-software-designs">Hardware & Software Designs</a></li>
                 <li><a href="#testing">Testing</a></li>
                 <li><a href="#detailed-budget">Detailed budget</a></li>
-                <li><a href="#conclusion">Conclusion</a></li>
                 <li><a href="#links">Links</a></li>
             </ol>
 
@@ -145,14 +151,51 @@
                         </div>
 
                         <br><br>
-                       <div class="row content text-center" data-aos="fade-up">
-    <div class="section-title">
-        <h3>Dataflow</h3>
-    </div>
-    <div class="col-md-12">
-        <img src="./Assets/img/data_flow_diagram.jpg" class="img-fluid" alt="Data Flow Diagram">
-    </div>
-</div>
+                        <div class="row content text-center" data-aos="fade-up">
+                            <div class="section-title">
+                                <h3>Dataflow</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <img src="./Assets/img/data_flow_diagram.jpg" class="img-fluid" alt="Data Flow Diagram">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hardware & Software Designs Section -->
+                <section id="hardware-and-software-designs">
+                    <div class="container" data-aos="fade-up">
+                        <div class="section-title">
+                            <h2>Hardware & Software Designs</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 text-center">
+                                <img src="assets/images/full_view.jpg" class="img-fluid" alt="Full View">
+                                <p>Full View</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <img src="assets/images/vr.jpg" class="img-fluid" alt="VR">
+                                <p>VR</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <img src="assets/images/hand_bands.jpg" class="img-fluid" alt="Hand Bands">
+                                <p>Hand Bands</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <img src="assets/images/golf_stick.jpg" class="img-fluid" alt="Golf Stick">
+                                <p>Golf Stick</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testing Section -->
+                <section id="testing">
+                    <div class="container" data-aos="fade-up">
+                        <div class="section-title">
+                            <h2>Testing</h2>
+                        </div>
+                        <p>We are going to test the system using two sets of hardware and software configurations to ensure compatibility and performance. The first set will include a high-end VR headset with advanced motion sensors, while the second set will use a mid-range VR headset with basic motion sensors. Both sets will be tested under the same conditions to evaluate the system's performance, responsiveness, and user experience.</p>
                     </div>
                 </section>
 
