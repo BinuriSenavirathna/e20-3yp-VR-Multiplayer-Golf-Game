@@ -20,15 +20,11 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="/e20-3yp-SafePlus/assets/css/index.css" rel="stylesheet">
-    <style>
-        /* Added more space at the top */
-        main {
-            padding-top: 100px;
-        }
-    </style>
 
-    <!-- Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-10YPVZG432"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -45,6 +41,18 @@
                 <img src="/e20-3yp-SafePlus/assets/images/crest.png" alt="Logo" style="height: 40px;">
                 <span class="ml-2">VR Multiplayer Golf Game</span>
             </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solution-architecture">Solution Architecture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#detailed-budget">Budget</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -57,120 +65,192 @@
     </header>
 
     <!-- Main Content -->
-    <main role="main" class="container">
+    <main role="main" class="container pt-5" style="min-height: 90vh">
         <div class="container px-5">
             <h1 id="project-title">VR Multiplayer Golf Game</h1>
             <hr />
-
-            <!-- Table of Contents -->
+           <!-- Team Section -->
+<h2 id="team">Team</h2>
+<div class="row">
+    <div class="col-md-3 text-center">
+        <img src="assets/images/team/e20254.jpg" class="img-fluid rounded-circle" alt="E/20/254">
+        <p>E/20/254 <br> <a href="mailto:e20254@eng.pdn.ac.lk">e20254@eng.pdn.ac.lk</a></p>
+    </div>
+    <div class="col-md-3 text-center">
+        <img src="assets/images/team/e20367.jpg" class="img-fluid rounded-circle" alt="E/20/367">
+        <p>E/20/367 <br> <a href="mailto:e20367@eng.pdn.ac.lk">e20367@eng.pdn.ac.lk</a></p>
+    </div>
+    <div class="col-md-3 text-center">
+        <img src="assets/images/team/e20370.jpg" class="img-fluid rounded-circle" alt="E/20/370">
+        <p>E/20/370 <br> <a href="mailto:e20370@eng.pdn.ac.lk">e20370@eng.pdn.ac.lk</a></p>
+    </div>
+    <div class="col-md-3 text-center">
+        <img src="assets/images/team/e20420.jpg" class="img-fluid rounded-circle" alt="E/20/420">
+        <p>E/20/420 <br> <a href="mailto:e20420@eng.pdn.ac.lk">e20420@eng.pdn.ac.lk</a></p>
+    </div>
+</div>
             <h4 id="table-of-contents">Table of Contents</h4>
             <ol>
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#solution-architecture">Solution Architecture</a></li>
-                <li><a href="#hardware-and-software-designs">Hardware & Software Designs</a></li>
+                <li><a href="#hardware-and-software-designs">Hardware &amp; Software Designs</a></li>
                 <li><a href="#testing">Testing</a></li>
-                <li><a href="#detailed-budget">Detailed Budget</a></li>
+                <li><a href="#detailed-budget">Detailed budget</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
                 <li><a href="#links">Links</a></li>
             </ol>
 
-            <!-- Hardware & Software Design -->
-            <h2 id="hardware-and-software-designs">Hardware & Software Design</h2>
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <h5>Full View</h5>
-                    <img src="assets/images/full_view.jpg" class="img-fluid" alt="Full View">
+            <h2 id="introduction">Introduction</h2>
+            <section id="about" class="about">
+                <div class="container">
+                    <div class="row content">
+                        <div class="col-lg-4">
+                            <h4 class="text-center pb-3">Real World Problem</h4>
+                            <p>In today’s globalized world, families and friends are often separated by physical distance.</p>
+                            <ul>
+                                <li>Lack of Shared Activities: Reduced opportunities for fun and interactive experiences.</li>
+                                <li>Emotional Disconnect: Weaker relationships and feelings of loneliness.</li>
+                                <li>Missed Memories: Missing out on special moments and bonding opportunities.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 pt-4 pt-lg-0">
+                            <h4 class="text-center pb-3">Proposed Solution</h4>
+                            <p>Creating a VR multiplayer golf game that brings families and friends closer.</p>
+                            <p>How it works</p>
+                            <ul>
+                                <li>Players use VR headsets and motion sensors on their hands and golf sticks to play a realistic game of golf.</li>
+                                <li>A multiplayer mode allows users to join virtual game rooms, interact via voice chat, and enjoy the game together.</li>
+                                <li>The game includes different difficulty levels, making it suitable for beginners and experienced players alike.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 pt-4 pt-lg-0">
+                            <h4 class="text-center pb-3">Potential Impact</h4>
+                            <p>Positively impact society by bridging long-distance relationships, promoting physical and mental well-being, and making golf more accessible and affordable. It fosters social inclusion by allowing people of all ages and abilities to participate, while also addressing issues of sedentary lifestyles and social isolation. Economically, it provides a cost-effective alternative to traditional golf and creates new opportunities in the VR and e-sports industries. Technologically, it advances VR adoption and innovation in gamified fitness, contributing to a more connected and health-conscious society.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 text-center">
-                    <h5>VR</h5>
-                    <img src="assets/images/vr.jpg" class="img-fluid" alt="VR">
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <h5>Hand Bands</h5>
-                    <img src="assets/images/hand_bands.jpg" class="img-fluid" alt="Hand Bands">
-                </div>
-                <div class="col-md-6 text-center">
-                    <h5>Golf Stick</h5>
-                    <img src="assets/images/golf_stick.jpg" class="img-fluid" alt="Golf Stick">
-                </div>
-            </div>
+            </section>
 
-            <!-- Testing Section -->
-            <h2 id="testing">Testing</h2>
-            <p>We will conduct testing using two sets of equipment:</p>
-            <ul>
-                <li><b>Set 1:</b> A basic setup with a VR headset and motion tracking sensors to test movement accuracy and latency.</li>
-                <li><b>Set 2:</b> A complete setup including hand bands, golf stick sensors, and voice communication to evaluate a fully immersive gameplay experience.</li>
-            </ul>
+            <section id="implementation">
+                <section id="solution-architecture">
+                    <div class="container" data-aos="fade-up">
+                        <div class="section-title">
+                            <h2>Solution Architecture</h2>
+                        </div>
+                        <br>
+                        <div class="row content">
+                            <div class="col-md-6" data-aos="fade-right">
+                                <img src="./Assets/img/highlevelarchitecture.jpg" class="img-fluid">
+                            </div>
+                        </div>
 
-            <!-- Detailed Budget -->
-            <h2 id="detailed-budget">Detailed Budget</h2>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Component</th>
-                        <th>Quantity</th>
-                        <th style="text-align: right;">Price (LKR)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td>MPU-6050 Sensor</td>
-                        <td>3x2</td>
-                        <td style="text-align: right;">3240.00</td>
-                    </tr>
-                    <tr>
-                        <td>02</td>
-                        <td>HC-05 Bluetooth Module</td>
-                        <td>3x2</td>
-                        <td style="text-align: right;">10140.00</td>
-                    </tr>
-                    <tr>
-                        <td>03</td>
-                        <td>Vibrator</td>
-                        <td>1x2</td>
-                        <td style="text-align: right;">240.00</td>
-                    </tr>
-                    <tr>
-                        <td>04</td>
-                        <td>VR Headset & Mic</td>
-                        <td>1x2</td>
-                        <td style="text-align: right;">14000.00</td>
-                    </tr>
-                    <tr>
-                        <td>05</td>
-                        <td>Rechargeable Battery</td>
-                        <td>9x2</td>
-                        <td style="text-align: right;">7560.00</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><b>Total</b></td>
-                        <td></td>
-                        <td style="text-align: right;"><b>57380.00</b></td>
-                    </tr>
-                </tbody>
-            </table>
+                        <br><br>
+                       <div class="row content text-center" data-aos="fade-up">
+    <div class="section-title">
+        <h3>Dataflow</h3>
+    </div>
+    <div class="col-md-12">
+        <img src="./Assets/img/data_flow_diagram.jpg" class="img-fluid" alt="Data Flow Diagram">
+    </div>
+</div>
+                    </div>
+                </section>
 
-            <!-- Footer -->
-            <footer class="bg-dark text-white text-center py-3">
-                <p class="mb-0">
-                    <a href="#" class="text-white">Back to top</a>
-                </p>
-            </footer>
-
-            <!-- Scripts -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-            <script src="assets/vendor/aos/aos.js"></script>
-            <script>
-                AOS.init();
-            </script>
+                <section id="detailed-budget">
+                    <div class="container" data-aos="fade-up">
+                        <div class="section-title">
+                            <h2>Budget</h2>
+                            <div>
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Component</th>
+                                            <th>Quantity</th>
+                                            <th style="text-align: right;">Price per item (LKR)</th>
+                                            <th style="text-align: right;">Price (LKR)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-body">
+                                            <th scope="row">01</th>
+                                            <td>MPU-6050</td>
+                                            <td>3x2</td>
+                                            <td style="text-align: right;">540.00</td>
+                                            <td style="text-align: right;">3240.00</td>
+                                        </tr>
+                                        <tr class="table-body">
+                                            <th scope="row">02</th>
+                                            <td>HC-05 Bluetooth RF Transceiver</td>
+                                            <td>3x2</td>
+                                            <td style="text-align: right;">990.00</td>
+                                            <td style="text-align: right;">10140.00</td>
+                                        </tr>
+                                        <tr class="table-body">
+                                            <th scope="row">03</th>
+                                            <td>Vibrator</td>
+                                            <td>1x2</td>
+                                            <td style="text-align: right;">120.00</td>
+                                            <td style="text-align: right;">240.00</td>
+                                        </tr>
+                                        <tr class="table-body">
+                                            <th scope="row">04</th>
+                                            <td>VR Box with headset & mic</td>
+                                            <td>1x2</td>
+                                            <td style="text-align: right;">7000.00</td>
+                                            <td style="text-align: right;">14000.00</td>
+                                        </tr>
+                                        <tr class="table-body">
+                                            <th scope="row">05</th>
+                                            <td>AWS</td>
+                                            <td>1</td>
+                                            <td style="text-align: right;">30.00 per hour</td>
+                                            <td style="text-align: right;">21600.00 per month</td>
+                                        </tr>
+                                        <tr class="table-body">
+                                            <th scope="row">06</th>
+                                            <td>Rechargeable battery</td>
+                                            <td>9x2</td>
+                                            <td style="text-align: right;">420.00</td>
+                                            <td style="text-align: right;">7560.00</td>
+                                        </tr>
+                                        <tr class="table-body">
+                                            <th scope="row">07</th>
+                                            <td>Button</td>
+                                            <td>6x2</td>
+                                            <td style="text-align: right;">50.00</td>
+                                            <td style="text-align: right;">600.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <th style="text-align: right;">Total</th>
+                                            <th style="text-align: right;">57380.00</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">
+            <a href="#" class="text-white">Back to top</a>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
