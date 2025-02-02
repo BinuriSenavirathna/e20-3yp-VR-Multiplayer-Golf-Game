@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +26,63 @@
     <link href="/e20-3yp-SafePlus/assets/css/index.css" rel="stylesheet">
     <style>
         body {
-            padding-top: 100px; /* Added more space to the top */
+            padding-top: 100px;
+            /* Added more space to the top */
+        }
+
+        /* Team Images - Scale and Fade */
+        .team-image {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0.8;
+        }
+
+        .team-image:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        /* Hardware & Software Images - Slide-in Effect */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hardware-img {
+            animation: slideIn 1s ease-in-out;
+        }
+
+        /* GitHub & Portfolio Links - Bounce Effect */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .link-hover:hover {
+            animation: bounce 0.5s ease-in-out;
+        }
+
+        .gallery-img {
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
     </style>
 
@@ -33,27 +90,37 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-10YPVZG432"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-10YPVZG432');
     </script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: '.glightbox'
+        });
+    </script>
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="/e20-3yp-SafePlus/assets/images/crest.png" alt="Logo" style="height: 40px;">
+                <img src="./Assets/img/logo.jpg" alt="Logo" style="height: 40px;">
                 <span class="ml-2">VR Multiplayer Golf Game</span>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#solution-architecture">Solution Architecture</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#hardware-and-software-designs">Hardware & Software Designs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solution-architecture">Solution Architecture</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#hardware-and-software-designs">Hardware & Software
+                            Designs</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testing">Testing</a></li>
                     <li class="nav-item"><a class="nav-link" href="#detailed-budget">Budget</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
@@ -80,19 +147,23 @@
             <h2 id="team">Team</h2>
             <div class="row">
                 <div class="col-md-3 text-center">
-                    <img src="./Assets/img/team/e20254.jpg" class="img-fluid rounded-circle" alt="E/20/254">
+                    <img src="./Assets/img/team/e20254.jpg" class="img-fluid team-image"
+                        style="width: 150px; height: 200px; object-fit: cover;" alt="E/20/254">
                     <p>E/20/254 <br> <a href="mailto:e20254@eng.pdn.ac.lk">e20254@eng.pdn.ac.lk</a></p>
                 </div>
                 <div class="col-md-3 text-center">
-                    <img src="./Assets/img/team/e20367.jpg" class="img-fluid rounded-circle" alt="E/20/367">
+                    <img src="./Assets/img/team/e20367.jpg" class="img-fluid team-image"
+                        style="width: 150px; height: 200px; object-fit: cover;" alt="E/20/367">
                     <p>E/20/367 <br> <a href="mailto:e20367@eng.pdn.ac.lk">e20367@eng.pdn.ac.lk</a></p>
                 </div>
                 <div class="col-md-3 text-center">
-                    <img src="./Assets/img/team/e20370.jpg" class="img-fluid rounded-circle" alt="E/20/370">
+                    <img src="./Assets/img/team/e20370.jpg" class="img-fluid team-image"
+                        style="width: 150px; height: 200px; object-fit: cover;" alt="E/20/370">
                     <p>E/20/370 <br> <a href="mailto:e20370@eng.pdn.ac.lk">e20370@eng.pdn.ac.lk</a></p>
                 </div>
                 <div class="col-md-3 text-center">
-                    <img src="./Assets/img/team/e20420.jpg" class="img-fluid rounded-circle" alt="E/20/420">
+                    <img src="./Assets/img/team/e20420.jpg" cclass="img-fluid team-image"
+                        style="width: 150px; height: 200px; object-fit: cover;" alt="E/20/420">
                     <p>E/20/420 <br> <a href="mailto:e20420@eng.pdn.ac.lk">e20420@eng.pdn.ac.lk</a></p>
                 </div>
             </div>
@@ -112,9 +183,11 @@
                     <div class="row content">
                         <div class="col-lg-4">
                             <h4 class="text-center pb-3">Real World Problem</h4>
-                            <p>In today’s globalized world, families and friends are often separated by physical distance.</p>
+                            <p>In today’s globalized world, families and friends are often separated by physical
+                                distance.</p>
                             <ul>
-                                <li>Lack of Shared Activities: Reduced opportunities for fun and interactive experiences.</li>
+                                <li>Lack of Shared Activities: Reduced opportunities for fun and interactive
+                                    experiences.</li>
                                 <li>Emotional Disconnect: Weaker relationships and feelings of loneliness.</li>
                                 <li>Missed Memories: Missing out on special moments and bonding opportunities.</li>
                             </ul>
@@ -124,14 +197,24 @@
                             <p>Creating a VR multiplayer golf game that brings families and friends closer.</p>
                             <p>How it works</p>
                             <ul>
-                                <li>Players use VR headsets and motion sensors on their hands and golf sticks to play a realistic game of golf.</li>
-                                <li>A multiplayer mode allows users to join virtual game rooms, interact via voice chat, and enjoy the game together.</li>
-                                <li>The game includes different difficulty levels, making it suitable for beginners and experienced players alike.</li>
+                                <li>Players use VR headsets and motion sensors on their hands and golf sticks to play a
+                                    realistic game of golf.</li>
+                                <li>A multiplayer mode allows users to join virtual game rooms, interact via voice chat,
+                                    and enjoy the game together.</li>
+                                <li>The game includes different difficulty levels, making it suitable for beginners and
+                                    experienced players alike.</li>
                             </ul>
                         </div>
                         <div class="col-lg-4 pt-4 pt-lg-0">
                             <h4 class="text-center pb-3">Potential Impact</h4>
-                            <p>Positively impact society by bridging long-distance relationships, promoting physical and mental well-being, and making golf more accessible and affordable. It fosters social inclusion by allowing people of all ages and abilities to participate, while also addressing issues of sedentary lifestyles and social isolation. Economically, it provides a cost-effective alternative to traditional golf and creates new opportunities in the VR and e-sports industries. Technologically, it advances VR adoption and innovation in gamified fitness, contributing to a more connected and health-conscious society.</p>
+                            <p>Positively impact society by bridging long-distance relationships, promoting physical and
+                                mental well-being, and making golf more accessible and affordable. It fosters social
+                                inclusion by allowing people of all ages and abilities to participate, while also
+                                addressing issues of sedentary lifestyles and social isolation. Economically, it
+                                provides a cost-effective alternative to traditional golf and creates new opportunities
+                                in the VR and e-sports industries. Technologically, it advances VR adoption and
+                                innovation in gamified fitness, contributing to a more connected and health-conscious
+                                society.</p>
                         </div>
                     </div>
                 </div>
@@ -168,24 +251,27 @@
                         <div class="section-title">
                             <h2>Hardware & Software Designs</h2>
                         </div>
-                        <div class="row">
-                            <div class="col-md-3 text-center">
-                                <img src="./Assets/img/full_view.jpg" class="img-fluid" alt="Full View">
-                                <p>Full View</p>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <img src="./Assets/img/vr.jpg" class="img-fluid" alt="VR">
-                                <p>VR</p>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <img src="./Assets/img/hand_bands.jpg" class="img-fluid" alt="Hand Bands">
-                                <p>Hand Bands</p>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <img src="./Assets/img/golf_stick.jpg" class="img-fluid" alt="Golf Stick">
-                                <p>Golf Stick</p>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <img src="./Assets/img/full_view.jpg" class="img-fluid" alt="Full View">
+                                    <p>Full View</p>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <img src="./Assets/img/vr.jpg" class="img-fluid" alt="VR">
+                                    <p>VR</p>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <img src="./Assets/img/hand_bands.jpg" class="img-fluid" alt="Hand Bands">
+                                    <p>Hand Bands</p>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <img src="./Assets/img/golf_stick.jpg" class="img-fluid" alt="Golf Stick">
+                                    <p>Golf Stick</p>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
@@ -195,7 +281,11 @@
                         <div class="section-title">
                             <h2>Testing</h2>
                         </div>
-                        <p>We are going to test the system using two sets of hardware and software configurations to ensure compatibility and performance. The first set will include a high-end VR headset with advanced motion sensors, while the second set will use a mid-range VR headset with basic motion sensors. Both sets will be tested under the same conditions to evaluate the system's performance, responsiveness, and user experience.</p>
+                        <p>We are going to test the system using two sets of hardware and software configurations to
+                            ensure compatibility and performance. The first set will include a high-end VR headset with
+                            advanced motion sensors, while the second set will use a mid-range VR headset with basic
+                            motion sensors. Both sets will be tested under the same conditions to evaluate the system's
+                            performance, responsiveness, and user experience.</p>
                     </div>
                 </section>
 
@@ -281,6 +371,51 @@
         </div>
     </main>
 
+    <section id="links" class="bg-light py-4">
+        <div class="container text-center">
+            <h3>Useful Links</h3>
+            <p><a href="https://github.com/cepdnaclk/e20-3yp-VR-Multiplayer-Golf-Game.git" target="_blank">GitHub
+                    Repository</a></p>
+            <h4>Team Portfolios</h4>
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="https://www.thecn.com/EM1302" target="_blank">E/20/254 - Portfolio</a></li>
+                <li><a href="https://www.thecn.com/ES1373" target="_blank">E/20/367 - Portfolio</a></li>
+                <li><a href="https://www.thecn.com/KS2820" target="_blank">E/20/370 - Portfolio</a></li>
+                <li><a href="https://www.thecn.com/EW778" target="_blank">E/20/420 - Portfolio</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section id="gallery" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Project Gallery</h2>
+                <p>Explore our VR Multiplayer Golf Game in action!</p>
+            </div>
+            <div class="row">
+                <!-- Image 1 -->
+                <div class="col-md-4">
+                    <a href="./Assets/img/gallery/image1.jpg" class="glightbox">
+                        <img src="./Assets/img/gallery/image1.jpg" class="img-fluid gallery-img" alt="Game Preview 1">
+                    </a>
+                </div>
+                <!-- Image 2 -->
+                <div class="col-md-4">
+                    <a href="./Assets/img/gallery/image2.jpg" class="glightbox">
+                        <img src="./Assets/img/gallery/image2.jpg" class="img-fluid gallery-img" alt="Game Preview 2">
+                    </a>
+                </div>
+                <!-- Image 3 -->
+                <div class="col-md-4">
+                    <a href="./Assets/img/gallery/image3.jpg" class="glightbox">
+                        <img src="./Assets/img/gallery/image3.jpg" class="img-fluid gallery-img" alt="Game Preview 3">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <p class="mb-0">
@@ -296,4 +431,5 @@
         AOS.init();
     </script>
 </body>
+
 </html>
