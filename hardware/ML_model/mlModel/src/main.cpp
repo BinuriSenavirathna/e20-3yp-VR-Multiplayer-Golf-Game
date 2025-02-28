@@ -7,41 +7,43 @@ SoftwareSerial BTSerial(2, 3);  // Bluetooth TX (D3) & RX (D2)
 MPU6050 gyro1(0x68);  // First MPU6050 (AD0 → GND)
 MPU6050 gyro2(0x69);  // Second MPU6050 (AD0 → VCC)
 
-// 2D array to store sensor data: [Gyro Index][6 Data Points]
-int16_t gyroData[2][6]; 
+int16_t gyroData[2][6];  // 2D array to store sensor data
+
+// Button pins
+const int buttonPins[] = {4, 5, 6};  // Three buttons
+int buttonStates[3] = {0, 0, 0};      // Store button states
 
 void setup() {
-    Serial.begin(115200); // Serial monitor
-    BTSerial.begin(9600); // Bluetooth module
+    Serial.begin(115200);
+    BTSerial.begin(9600);
+    Wire.begin(); 
 
-    Wire.begin();  // Initialize hardware I2C
+    // Initialize buttons as INPUT_PULLUP
+    for (int i = 0; i < 3; i++) {
+        pinMode(buttonPins[i], INPUT_PULLUP);
+    }
+
     Serial.println("Initializing Gyroscopes...");
 
-    // Initialize Gyroscope 1
     gyro1.initialize();
-    if (!gyro1.testConnection()) {
-        Serial.println("Gyro1 (0x68) not responding!");
-    } else {
+    if (!gyro1.testConnection()) Serial.println("Gyro1 (0x68) not responding!");
+    else {
         Serial.println("Gyro1 connected.");
         calibrateMPU6050(gyro1);
     }
 
-    // Initialize Gyroscope 2
     gyro2.initialize();
-    if (!gyro2.testConnection()) {
-        Serial.println("Gyro2 (0x69) not responding!");
-    } else {
+    if (!gyro2.testConnection()) Serial.println("Gyro2 (0x69) not responding!");
+    else {
         Serial.println("Gyro2 connected.");
         calibrateMPU6050(gyro2);
     }
 }
 
-// Function to calibrate MPU6050 gyroscope offsets
 void calibrateMPU6050(MPU6050 &gyro) {
     Serial.println("Calibrating...");
     int32_t gx_offset = 0, gy_offset = 0, gz_offset = 0;
 
-    // Take multiple readings to calculate average offset
     for (int i = 0; i < 200; i++) {
         int16_t ax, ay, az, gx, gy, gz;
         gyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
@@ -50,15 +52,13 @@ void calibrateMPU6050(MPU6050 &gyro) {
         gy_offset += gy;
         gz_offset += gz;
 
-        delay(10);  // Small delay between readings
+        delay(10);
     }
 
-    // Compute average offset
     gx_offset /= 200;
     gy_offset /= 200;
     gz_offset /= 200;
 
-    // Set offsets
     gyro.setXGyroOffset(-gx_offset);
     gyro.setYGyroOffset(-gy_offset);
     gyro.setZGyroOffset(-gz_offset);
@@ -73,24 +73,39 @@ void loop() {
     // Read data from second gyro
     gyro2.getMotion6(&gyroData[1][0], &gyroData[1][1], &gyroData[1][2], &gyroData[1][3], &gyroData[1][4], &gyroData[1][5]);
 
+    // Read button states (LOW when pressed, HIGH when released)
+    for (int i = 0; i < 3; i++) {
+        buttonStates[i] = digitalRead(buttonPins[i]);
+    }
+
     // Print and send data
     sendData();
 
     Serial.println("------------------------");
-    delay(1000);  // Wait 1 second before next reading
+    delay(500);
 }
 
-// Function to send data via Bluetooth
 void sendData() {
-    for (int i = 0; i < 2; i++) {  // Loop through both gyros
+    for (int i = 0; i < 2; i++) { 
         Serial.print("Gyro"); Serial.print(i + 1); Serial.print(": ");
         BTSerial.print("Gyro"); BTSerial.print(i + 1); BTSerial.print(": ");
 
-        for (int j = 0; j < 6; j++) {  // Loop through 6 data points
+        for (int j = 0; j < 6; j++) {  
             Serial.print(gyroData[i][j]); Serial.print("\t");
             BTSerial.print(gyroData[i][j]); BTSerial.print(",");
         }
         Serial.println();
-        BTSerial.println(); // Send newline over Bluetooth
+        BTSerial.println();
+    }
+
+    // Send button states over Bluetooth
+    for (int i = 0; i < 3; i++) {
+        Serial.print("Button "); Serial.print(i + 1);
+        Serial.print(": ");
+        Serial.println(buttonStates[i] == LOW ? "PRESSED" : "RELEASED");
+
+        BTSerial.print("Button "); BTSerial.print(i + 1);
+        BTSerial.print(": ");
+        BTSerial.println(buttonStates[i] == LOW ? "PRESSED" : "RELEASED");
     }
 }
