@@ -30,7 +30,7 @@ void setup() {
     else {
         Serial.println("Gyro1 connected.");
         calibrateMPU6050(gyro1);
-    }
+    } 
 
     gyro2.initialize();
     if (!gyro2.testConnection()) Serial.println("Gyro2 (0x69) not responding!");
