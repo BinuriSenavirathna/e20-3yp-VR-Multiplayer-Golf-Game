@@ -23,17 +23,68 @@ document.addEventListener("DOMContentLoaded", function () {
         navLinks.classList.toggle("active");
     });
 
-    // See More Button functionality
-    const seeMoreBtn = document.querySelector(".see-more-btn");
-    const seeMoreText = document.querySelector(".see-more-text");
+    // Gallery Carousel Functionality
+    const carouselImages = document.querySelectorAll(".carousel img");
+    const prevBtn = document.querySelector(".carousel .prev");
+    const nextBtn = document.querySelector(".carousel .next");
+    const dots = document.querySelectorAll(".carousel .dots span");
 
-    seeMoreBtn.addEventListener("click", function () {
-        if (seeMoreText.style.webkitLineClamp === "3") {
-            seeMoreText.style.webkitLineClamp = "none"; // Show all text
-            seeMoreBtn.textContent = "See Less";
+    let currentIndex = 0;
+    let interval;
+
+    function showImage(index) {
+        // Ensure index wraps around correctly
+        if (index >= carouselImages.length) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = carouselImages.length - 1;
         } else {
-            seeMoreText.style.webkitLineClamp = "3"; // Collapse the text
-            seeMoreBtn.textContent = "See More";
+            currentIndex = index;
         }
+
+        // Remove active class from all images
+        carouselImages.forEach((img, i) => {
+            img.classList.toggle("active", i === currentIndex);
+            dots[i].classList.toggle("active", i === currentIndex);
+        });
+    }
+
+    function nextImage() {
+        showImage(currentIndex + 1);
+    }
+
+    function prevImage() {
+        showImage(currentIndex - 1);
+    }
+
+    // Event Listeners for Navigation Buttons
+    prevBtn.addEventListener("click", function () {
+        prevImage();
+        restartAutoSlide();
     });
+
+    nextBtn.addEventListener("click", function () {
+        nextImage();
+        restartAutoSlide();
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", function () {
+            showImage(index);
+            restartAutoSlide();
+        });
+    });
+
+    // Auto-slide function
+    function startAutoSlide() {
+        interval = setInterval(nextImage, 5000); // Change every 5 seconds
+    }
+
+    function restartAutoSlide() {
+        clearInterval(interval);
+        startAutoSlide();
+    }
+
+    // Start the auto-slide when page loads
+    startAutoSlide();
 });
